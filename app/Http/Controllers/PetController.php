@@ -132,7 +132,7 @@ class PetController extends Controller
   public function filterBySpecies($especie)
     {
         // Filtrar las mascotas por la especie proporcionada
-        $pets = Pet::where('especie', 'LIKE', '%' . $especie . '%')->get();
+        $pets = Pets::where('especie', 'LIKE', '%' . $especie . '%')->get();
 
         if ($pets->isNotEmpty()) {
             return response()->json([
